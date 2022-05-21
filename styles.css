@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+:root {
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "open sans", sans-serif;
+  --accent-100: #d9e8e5;
+  --accent-200: #9ae6b4;
+  --accent-300: #a5e4ae;
+  --accent-400: #48bb78;
+  --accent-500: #4dbc5d;
+  --accent-600: #2f855a;
+  --accent-700: #12874b;
+  --accent-800: #22543d;
+  --accent-900: #0e5832;
+
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "open sans", sans-serif;
+
+  /* --fs-h1:  */
+  --fs-h2: 3rem;
+  --fs-h3: 2rem;
+  --fs-body: 1.3rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+/* GLOBAL STYLING */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: none;
+}
+body {
+  background-color: var(--accent-100);
+}
+
+.container {
+  display: block;
+  width: 100%;
+  padding-right: 28px;
+  padding-left: 28px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  color: var(--accent-100);
+  font-family: var(--ff-primary);
+  text-align: center;
+}
+
+p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: var(--fs-body);
+}
+
+img {
+  display: block;
+  max-width: 300px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--accent-800);
+  font-family: var(--ff-primary);
+}
+
+/* HEADER SECTION */
+header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20%;
+  background-color: var(--accent-800); /*800 or 900 IDK*/
+  font-family: var(--ff-primary);
+  font-size: 18px;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--accent-100);
+}
+
+.logo:hover {
+  text-decoration: underline;
+  color: #ffcb05;
+  transition: all 0.3s ease 0s;
+}
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav-links a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #ffcb05;
+}
+
+.intro-text-bg {
+  background-color: var(--accent-800);
+}
+
+/* INTRODUCTION SECTION */
+.intro-text {
+  max-width: 960px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: var(--accent-100);
+  font-family: var(--ff-primary);
+}
+
+.intro-text-btn {
+  color: var(--accent-100);
+}
+
+.intro-text-btn:hover {
+  color: #ffcb05;
+  transition: all 0.3s ease 0s;
+}
+
+.btn {
+  background: #f2cf00;
+  background: linear-gradient(180deg, #f2cf00 0%, #f2b200 100%);
+  box-shadow: 0 2px 3px rgb(0 0 0 / 50%);
+  border: none !important;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: linear-gradient(180deg, #f2cf00 0%, #f2b200 25%);
+}
+
+/* ABOUT ME SECTION */
+#about {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.about-me {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title-about {
+  padding-top: 40px;
+}
+
+.about-me-img {
+  box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+      "title img"
+      "subtitle img"
+      "text img";
+  }
+
+  .section-title-about,
+  .section-subtitle-about {
+    grid-column: 1;
+  }
+
+  .about-me-img {
+    grid-area: img;
+  }
+}
+
+/* PORTFOLIO SECTION */
+
+.section-title-portfolio {
+  color: var(--accent-100);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.my-portfolio p {
+  color: var(--accent-100);
+}
+
+.portfolio-img-1 {
+  box-shadow: var(--bs);
+  max-width: 500px;
+}
+
+.portfolio-items {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 0px 500px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas:
+    "title title"
+    "image text";
+}
+
+.portfolio-image {
+  justify-self: center;
+  align-self: center;
+  grid-area: image;
+  padding-right: 80px;
+}
+
+.portfolio-text {
+  justify-self: center;
+  align-self: center;
+  grid-area: text;
+}
+
+.portfolio-title {
+  grid-area: title;
+}
+
+/* CONTACT SECTION */
+.section-title-contact {
+  background-color: var(--accent-100);
+}
+.contact-box {
+  width: 500px;
+  left: 50%;
+  box-shadow: var(--bs);
+  top: 2500px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: var(--accent-800);
+}
+
+form {
+  margin: 35px;
+}
+
+.input-field {
+  width: 430px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  border: 1px solid var(--accent-800);
+  background-color: var(--accent-100);
+  border-radius: 14px;
+  font-family: var(--ff-primary);
+}
+
+.textarea-field {
+  height: 150px;
+  width: 430px;
+  padding-top: 10px;
+  font-family: var(--ff-primary);
+  max-width: 430px;
+  max-height: 190;
+}
+
+.form-btn {
+  font-family: var(--ff-primary);
+}
